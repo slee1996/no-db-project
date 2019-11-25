@@ -87,7 +87,10 @@ class App extends Component {
       this.setState({
         getHeavy: !this.state.getHeavy
       })
-    });
+    })
+    .catch(console.log(
+      'Error Message'
+    ))
   }
 
   chooseH(event) {
@@ -106,7 +109,10 @@ class App extends Component {
 
     axios.post( 'http://localhost:4000/api/loadouts', {name, char, kinetic, energy, heavy} ).then(response => {
       this.setState({ loadouts: response.data });
-    });
+    })
+    .catch(console.log(
+      'Error Message'
+    ))
   }
 
   render(){
